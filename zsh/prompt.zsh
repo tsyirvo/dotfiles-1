@@ -51,11 +51,11 @@ need_push () {
 }
 
 machine_info() {
-  echo "%{$fg_bold[cyan]%}%n%{$reset_color%} @ %{$fg_bold[green]%}%m%{$reset_color%}"
+  echo "%{$fg_bold[white]%}%n%{$reset_color%} @ %{$fg_bold[white]%}%m%{$reset_color%}"
 }
 
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%~%{$reset_color%}"
+  echo "%{$fg_bold[yellow]%}%~%{$reset_color%}"
 }
 
 battery_status() {
