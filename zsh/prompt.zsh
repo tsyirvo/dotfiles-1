@@ -9,9 +9,9 @@ else
   git="/usr/bin/git"
 fi
 
-git_branch() {
-  echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
-}
+# git_branch() {
+#   echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+# }
 
 git_dirty() {
   if $(! $git status -s &> /dev/null)
@@ -20,9 +20,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg_bold[white]%}git:%{$reset_color%}%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg_bold[white]%}git:%{$reset_color%}%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
     fi
   fi
 }
@@ -50,8 +50,12 @@ need_push () {
   fi
 }
 
+machine_info() {
+  echo "%{$fg_bold[cyan]%}%n%{$reset_color%} @ %{$fg_bold[green]%}%m%{$reset_color%}"
+}
+
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg_bold[cyan]%}%~%{$reset_color%}"
 }
 
 battery_status() {
@@ -61,7 +65,7 @@ battery_status() {
   fi
 }
 
-export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(battery_status)- $(machine_info) in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
