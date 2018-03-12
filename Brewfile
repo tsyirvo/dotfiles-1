@@ -35,6 +35,7 @@ brew 'ant'
 brew 'maven'
 brew 'exa'
 
+cask 'fastlane'
 cask 'firefox'
 cask 'google-chrome'
 cask 'slack'
