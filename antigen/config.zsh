@@ -12,3 +12,4 @@ antigen bundle zsh-users/zsh-autosuggestions
 
 # Theming
 # antigen theme ys
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
