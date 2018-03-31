@@ -9,6 +9,7 @@ antigen bundle rand-quote
 # Other bundles.
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle lukechilds/zsh-better-npm-completion
 
 # Theming
 # antigen theme ys
