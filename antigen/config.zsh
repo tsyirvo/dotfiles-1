@@ -14,3 +14,9 @@ antigen bundle lukechilds/zsh-better-npm-completion
 # Theming
 # antigen theme ys
 antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+
+# Prompt config
+SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_RUBY_SHOW=false
+Xcode=false
+Docker=false
