@@ -34,6 +34,8 @@ brew 'cocoapods'
 brew 'ant'
 brew 'maven'
 brew 'exa'
+brew 'kubectl'
+brew 'kops'
 
 cask 'fastlane'
 cask 'firefox'
